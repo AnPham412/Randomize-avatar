@@ -1,4 +1,4 @@
-### `Run a random customize avatar mini app`
+# `Run a random customize avatar mini app`
 
 # Getting Started with Create React App
 
