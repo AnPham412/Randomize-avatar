@@ -1,24 +1,56 @@
-import logo from './logo.svg';
+import React, {useEffect, useState} from "react";
+import Images from "./Images";
+import "./character"
 import './App.css';
 
-function App() {
+const App = () => {
+  const [avatarImage,setAvatarImage] = useState();
+  const [section,setSection] = useState();
+  const [sourceName,setSourceName] = useState();
+
+  useEffect(()=>{
+    let src = import(".public/character/");
+    if (avatarImage){
+      src = src + `${parent.name}/` + sourceName;
+    }
+    const handleImage = async () =>{
+
+    }
+  },[avatarImage]);
+  const handleRandom = (e)=>{
+    e.preventDefault();
+    setAvatarImage();
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  <>
+    <div className="title">CHARACTER</div>
+    <div className="subtitle">🛠️CUSTOMIZATION🛠️</div>
+    <div className="avatar-group gap-30">
+      <div>
+        <div className="avatar-wrapper">
+          <div className="avatar">{avatarImage}</div>
+          <div className="text-center">
+            <button className="button" onClick={handleRandom}>Randomize!</button>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div className="list-section">
+          <h2>{"./character/${character.name}"}</h2>
+          <div className="list">
+            <div className="clickable-square">
+              <img
+                  src ={`${<Images/>[1]}`}
+                   alt height="60"
+                   className="img-center"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </>
   );
 }
 
